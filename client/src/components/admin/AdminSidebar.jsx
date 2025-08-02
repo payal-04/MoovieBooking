@@ -1,4 +1,4 @@
-import React, { use } from 'react'
+import React from 'react'
 import { assets } from '../../assets/assets'
 import { LayoutDashboard, ListCollapseIcon, ListIcon, PlusSquareIcon } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
@@ -13,7 +13,7 @@ const AdminSidebar = () => {
 
   const adminNavlinks = [
     {name: 'Dashboard', path: '/admin', icon: LayoutDashboard},
-    {name: 'Add Shows', path: '/admin/add-sows', icon: PlusSquareIcon},
+    {name: 'Add Shows', path: '/admin/add-shows', icon: PlusSquareIcon},
     {name: 'List Shows', path: '/admin/list-shows', icon: ListIcon},
     {name: 'List Bookings', path: '/admin/list-bookings', icon: ListCollapseIcon},
 
