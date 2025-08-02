@@ -49,7 +49,9 @@ const MyBookings = () => {
             text-sm rounded-full font-medium cursor-pointer'>Pay Now</button>}
            </div>
            <div className='text-sm'>
-           <p><span></span></p>
+           <p><span className='text-gray-400'>Total Tickets: </span>{item.bookedSeats.length}</p>
+           <p><span className='text-gray-400'>Seat Number: </span>{item.bookedSeats.join(", ")}</p>
+
            </div>
           </div>
 
