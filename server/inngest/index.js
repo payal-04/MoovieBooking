@@ -46,6 +46,8 @@ async({event})=>{
      name: first_name+' '+last_name, 
      image: image_url 
    } 
+     await User.findByIdAndUpdate(id, userData)
+
    } 
  )
 
@@ -53,5 +55,6 @@ async({event})=>{
 // Create an empty array where we'll export future Inngest functions 
 export const functions = [
     syncUserCreation,
-    syncUserDeletion
+    syncUserDeletion,
+    syncUserUpdation
 ];
