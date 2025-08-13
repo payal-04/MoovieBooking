@@ -1,5 +1,6 @@
 import { clerkClient } from "@clerk/express";
 import Booking from "../models/Booking.js";
+import Movie from "../models/Movie.js";
 
 
 //API Controller Function to get User Bookings//
@@ -19,7 +20,7 @@ export const getUserBookings = async (req, res) =>{
 }
 
 //API Controller Function to Add Favourite Movie in Clerk User MetaData//
-export const addFavourite = async (req, res) =>{
+export const updateFavourite = async (req, res) =>{
     try {
         const {movieId} = req.body;
         const userId = req.auth().userId;
@@ -32,11 +33,29 @@ export const addFavourite = async (req, res) =>{
 
         if(!user.privateMetadata.favourites.includes(movieId)){
             user.privateMetadata.favourites.push(movieId)
+        }else{
+            user.privateMetadata.favourites = user.privateMetadata.favourites.filter
+            (item => item !== movieId)
         }
 
         await clerkClient.users.updateUserMetadata(userId, {privateMetadata:user.privateMetadata})
 
         res.json({success: true, message: "Favourites Added Successfully!"})
+    } catch (error) {
+        console.error(error);
+        res.json({success: false, message: error.message});
+    }
+}
+
+export const getFavourites = async (req, res) =>{
+    try {
+        const user = await clerkClient.users.getUser(req.auth().userId)
+        const favourites = user.privateMetadata.favourites;
+
+        //Getting Movies from Database//
+        const movies = await Movie.find({_id: {$in: favourites}})
+
+        res.json({success: true, movies})
     } catch (error) {
         console.error(error);
         res.json({success: false, message: error.message});
