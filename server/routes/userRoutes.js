@@ -1,7 +1,10 @@
 import express from "express";
-import { getUserBookings, updateFavourite } from "../controllers/userController";
+import { getFavourites, getUserBookings, updateFavourite } from "../controllers/userController";
 
 const userRouter = express.Router();
 
 userRouter.get('/bookings', getUserBookings)
 userRouter.post('/update-favourite', updateFavourite)
+userRouter.get('/favourites', getFavourites)
+
+export default userRouter;
