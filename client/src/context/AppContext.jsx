@@ -64,7 +64,7 @@ const fetchFavouriteMovies = async ()=>{
 
 useEffect(()=>{
    fetchShows()
-,[]})
+},[])
 
  useEffect(()=>{
     if(user)

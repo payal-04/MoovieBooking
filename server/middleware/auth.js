@@ -13,10 +13,6 @@ export const protectAdmin = async (req,res, next) => {
        } 
 
        next();
-       console.log("DEBUG protectAdmin:", {
-          userId,
-          role: user.privateMetadata.role
-        });
 
     } catch (error) {
         return res.json({success: false, message: "Not Authorized"})
