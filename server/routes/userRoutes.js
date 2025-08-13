@@ -1,5 +1,5 @@
 import express from "express";
-import { getFavourites, getUserBookings, updateFavourite } from "../controllers/userController";
+import { getFavourites, getUserBookings, updateFavourite } from "../controllers/userController.js";
 
 const userRouter = express.Router();
 
