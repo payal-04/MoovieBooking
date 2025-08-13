@@ -21,15 +21,15 @@ export const dummyTrailers = [
     },
     {
         image: "https://img.youtube.com/vi/-sAOWhvheK8/maxresdefault.jpg",
-        videoUrl: 'https://www.youtube.com/watch?v=QXZ6znSpEh0'
+        videoUrl: 'https://www.youtube.com/watch?v=qi5UTD7kEr0'
     },
     {
         image: "https://img.youtube.com/vi/1pHDWnXmK7Y/maxresdefault.jpg",
-        videoUrl: 'https://www.youtube.com/watch?v=QXZ6znSpEh0'
+        videoUrl: 'https://www.youtube.com/watch?v=iKZyYdwS3Wg'
     },
     {
         image: "https://img.youtube.com/vi/umiKiW4En9g/maxresdefault.jpg",
-        videoUrl: 'https://www.youtube.com/watch?v=QXZ6znSpEh0'
+        videoUrl: 'https://www.youtube.com/watch?v=oVzVdvGIC7U'
     },
 ]
 

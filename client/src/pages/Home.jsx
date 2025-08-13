@@ -8,7 +8,6 @@ const Home = () => {
     <div>
        <HeroSection />
        <FeaturedSection />
-       <TrailerSection />
     </div>
   )
 }
